@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
@@ -47,48 +48,16 @@ export function AdSidebar() {
 }
 
 export function AffiliateSlot() {
-  const affiliateOffers = [
-    {
-      label: "Smart Link (Tech Caller Picks)",
-      href: SMART_LINK
-    },
-    {
-      label: "Amazon (Gaming & PC Gear)",
-      href: "https://www.amazon.in/s?k=gaming+keyboard+mouse"
-    },
-    {
-      label: "Razer Store",
-      href: "https://www.razer.com"
-    },
-    {
-      label: "Steam (Games & bundles)",
-      href: "https://store.steampowered.com"
-    }
-  ];
-
-  return (
-    <section className="sponsor-card rounded-lg border border-border bg-card p-5">
-      <p className="text-xs font-semibold uppercase tracking-wide text-muted">Affiliate / Sponsor Spot</p>
-      <h2 className="mt-1 text-lg font-bold">Recommended Links for Tech Caller Viewers</h2>
-      <p className="mt-2 text-sm text-muted">
-        Gaming, tech, and creator-friendly links collected in one place.
-      </p>
-      <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        {affiliateOffers.map((offer) => (
-          <a
-            key={offer.label}
-            href={offer.href}
-            target="_blank"
-            rel="noreferrer"
-            className="sponsor-link rounded-md border border-border bg-surface p-3 text-sm font-semibold text-foreground hover:border-accent hover:text-accent"
-          >
-            {offer.label}
-          </a>
-        ))}
-      </div>
-    </section>
-  );
+  return null;
 }
+
+type AdsterraLinkSlotProps = {
+  label?: string;
+  title?: string;
+  description?: string;
+  className?: string;
+  compact?: boolean;
+};
 
 type NativeBannerSlotProps = {
   containerId?: string;
@@ -128,6 +97,28 @@ export function SmartLinkSlot() {
       </div>
       <a href={SMART_LINK} target="_blank" rel="noreferrer">
         Open Featured Link
+      </a>
+    </section>
+  );
+}
+
+export function AdsterraLinkSlot({
+  label = "Advertisement",
+  title = "Sponsored tech and gaming offers",
+  description = "A sponsored placement that may show offers based on your device, browser, and location.",
+  className,
+  compact = false
+}: AdsterraLinkSlotProps) {
+  return (
+    <section className={cn("adsterra-link-slot", compact && "adsterra-link-slot-compact", className)} aria-label={label}>
+      <div>
+        <p className="ad-label">{label}</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <a href={SMART_LINK} target="_blank" rel="noreferrer">
+        Open sponsored offer
+        <ArrowUpRight size={16} aria-hidden />
       </a>
     </section>
   );

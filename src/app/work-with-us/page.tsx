@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Code2, Gamepad2, Handshake, MessageCircle } from "lucide-react";
+import { AdsterraLinkSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { workOpportunities } from "@/content/enquiries";
 
 export const metadata: Metadata = {
@@ -30,6 +31,12 @@ export default function WorkWithUsPage() {
             </article>
           );
         })}
+      </section>
+      <section className="container-shell pb-12">
+        <NativeBannerSlot />
+      </section>
+      <section className="container-shell pb-12">
+        <AdsterraLinkSlot />
       </section>
       <section className="soft-band">
         <div className="container-shell closing-row"><div><p className="eyebrow">SOMETHING ELSE?</p><h2>Good ideas don&apos;t always fit a category.</h2></div><Link className="text-link" href="/contact?type=other">Tell us about yours<ArrowRight size={18} aria-hidden /></Link></div>

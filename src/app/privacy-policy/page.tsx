@@ -1,3 +1,5 @@
+import { NativeBannerSlot } from "@/components/ads/ad-slots";
+
 export default function PrivacyPolicyPage() {
   return (
     <section className="container-shell py-12">
@@ -6,6 +8,9 @@ export default function PrivacyPolicyPage() {
         <p>This template should be reviewed and customized before production use.</p>
         <p>Tech Caller stores resource records, download counts and minimal download event data such as timestamp, user agent and referrer when available.</p>
         <p>The site does not enable invasive analytics by default. Optional analytics and advertising tools should be documented here before launch.</p>
+      </div>
+      <div className="mt-10">
+        <NativeBannerSlot />
       </div>
     </section>
   );

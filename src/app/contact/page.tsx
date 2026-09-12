@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Mail, ArrowUpRight, Youtube } from "lucide-react";
+import { AdsterraLinkSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { EnquiryForm } from "@/components/contact/enquiry-form";
 import { siteConfig } from "@/lib/config";
 
@@ -29,7 +30,13 @@ export default async function ContactPage({ searchParams }: {
           <a className="text-link email-address" href={"mailto:" + siteConfig.contactEmail}>{siteConfig.contactEmail}<ArrowUpRight size={17} aria-hidden /></a>
           <p>For help with a video, include its link and the step you&apos;re having trouble with.</p>
           <div className="contact-channel"><Youtube size={23} aria-hidden /><h2>Looking for the channel?</h2><a className="text-link" href={siteConfig.youtubeChannelUrl} target="_blank" rel="noreferrer">Watch on YouTube<ArrowUpRight size={17} aria-hidden /></a></div>
+          <div className="mt-10">
+            <AdsterraLinkSlot compact />
+          </div>
         </aside>
+      </section>
+      <section className="container-shell pb-12">
+        <NativeBannerSlot />
       </section>
     </>
   );

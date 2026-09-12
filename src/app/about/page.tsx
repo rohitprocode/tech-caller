@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Youtube } from "lucide-react";
+import { AdsterraLinkSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { channel } from "@/content/channel";
 
 export const metadata: Metadata = {
@@ -39,6 +40,12 @@ export default function AboutPage() {
           <p>This website is a home for both sides: discover the channel, find a resource, ask about a video, or start a conversation about working together.</p>
           <div className="story-actions"><Link className="text-link" href="/work-with-us">Work with Tech Caller<ArrowRight size={18} aria-hidden /></Link><a className="text-link" href={channel.url} target="_blank" rel="noreferrer"><Youtube size={19} aria-hidden />Watch the channel<ArrowUpRight size={17} aria-hidden /></a></div>
         </div>
+      </section>
+      <section className="container-shell pb-12">
+        <NativeBannerSlot />
+      </section>
+      <section className="container-shell pb-12">
+        <AdsterraLinkSlot />
       </section>
       <section className="soft-band"><div className="container-shell closing-row"><div><p className="eyebrow">HAVE SOMETHING IN MIND?</p><h2>Let&apos;s talk about it.</h2></div><Link className="text-link" href="/contact">Start a conversation<ArrowRight size={18} aria-hidden /></Link></div></section>
     </>

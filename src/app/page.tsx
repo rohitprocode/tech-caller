@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Download, FolderOpen, ListVideo, Play, Sparkles, Youtube } from "lucide-react";
 import { VideoCard } from "@/components/channel/video-card";
-import { AffiliateSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
+import { AdsterraLinkSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
 import { channel } from "@/content/channel";
 
 export const metadata: Metadata = {
@@ -55,7 +55,7 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell pb-6">
-        <AffiliateSlot />
+        <AdsterraLinkSlot />
       </section>
 
       <section className="container-shell collection-section" aria-labelledby="collection-heading">

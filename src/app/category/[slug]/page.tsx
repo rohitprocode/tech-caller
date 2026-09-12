@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { AdsterraLinkSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { ResourceGrid } from "@/components/resources/resource-grid";
 import { Pagination } from "@/components/resources/pagination";
 import { getCategoryWithResources } from "@/lib/data";
@@ -22,7 +23,13 @@ export default async function CategoryPage({
         <h1 className="mt-2 text-4xl font-black">{result.category.name}</h1>
         {result.category.description ? <p className="mt-3 max-w-2xl text-muted">{result.category.description}</p> : null}
       </div>
+      <div className="mb-8">
+        <NativeBannerSlot />
+      </div>
       <ResourceGrid resources={result.resources} />
+      <div className="my-8">
+        <AdsterraLinkSlot />
+      </div>
       <Pagination basePath={`/category/${slug}`} page={result.page} pageSize={result.pageSize} count={result.count} params={{}} />
     </section>
   );

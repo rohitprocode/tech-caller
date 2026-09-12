@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Download, ExternalLink, FileArchive, HardDrive, Youtube } from "lucide-react";
-import { AdInArticle, AdSidebar } from "@/components/ads/ad-slots";
+import { AdsterraLinkSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { DownloadButton } from "@/components/resources/download-button";
 import { ButtonLink } from "@/components/ui/button";
 import { getResourceBySlug } from "@/lib/data";
@@ -99,7 +99,9 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
             />
           </div>
 
-          <AdInArticle />
+          <div className="mt-10">
+            <NativeBannerSlot />
+          </div>
 
           <section className="mt-10">
             <h2 className="text-2xl font-black">How to Use</h2>
@@ -156,7 +158,7 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
               </ButtonLink>
             ) : null}
           </div>
-          <AdSidebar />
+          <AdsterraLinkSlot compact />
         </aside>
       </div>
     </article>

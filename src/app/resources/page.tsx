@@ -3,7 +3,7 @@ import { Download, Search, ShieldCheck } from "lucide-react";
 import { ResourceFilters } from "@/components/resources/resource-filters";
 import { ResourceGrid } from "@/components/resources/resource-grid";
 import { Pagination } from "@/components/resources/pagination";
-import { AffiliateSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
+import { AdsterraLinkSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
 import { getCategories, getResourceList } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -47,7 +47,7 @@ export default async function ResourcesPage({
         <SmartLinkSlot />
       </div>
       <div className="mb-8">
-        <AffiliateSlot />
+        <AdsterraLinkSlot />
       </div>
       <Pagination
         basePath="/resources"
