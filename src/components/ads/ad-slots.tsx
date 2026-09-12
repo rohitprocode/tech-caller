@@ -48,6 +48,10 @@ export function AdSidebar() {
 export function AffiliateSlot() {
   const affiliateOffers = [
     {
+      label: "Smart Link (Tech Caller Picks)",
+      href: "https://www.profitableratecpmnetwork.com/qzze3f41gr?key=7e99f7b05d8b3f09896fb19e34412b32"
+    },
+    {
       label: "Amazon (Gaming & PC Gear)",
       href: "https://www.amazon.in/s?k=gaming+keyboard+mouse"
     },
