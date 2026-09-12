@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { Download, Search, ShieldCheck } from "lucide-react";
 import { ResourceFilters } from "@/components/resources/resource-filters";
 import { ResourceGrid } from "@/components/resources/resource-grid";
 import { Pagination } from "@/components/resources/pagination";
-import { AdInArticle, AffiliateSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
+import { AffiliateSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
 import { getCategories, getResourceList } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -25,9 +26,17 @@ export default async function ResourcesPage({
 
   return (
     <section className="container-shell py-12">
-      <div className="mb-8">
-        <h1 className="text-4xl font-black">Resources</h1>
-        <p className="mt-3 max-w-2xl text-muted">Find downloads connected to Tech Caller tutorials.</p>
+      <div className="resource-library-hero mb-8">
+        <div>
+          <p className="eyebrow">TECH CALLER DOWNLOAD HUB</p>
+          <h1>Resources for videos, gaming and practical setup work.</h1>
+          <p>Search files connected to Tech Caller tutorials and download what you need without digging through old video descriptions.</p>
+        </div>
+        <div className="resource-library-points" aria-label="Resource page highlights">
+          <span><Search size={17} aria-hidden /> Search by topic</span>
+          <span><Download size={17} aria-hidden /> Direct downloads</span>
+          <span><ShieldCheck size={17} aria-hidden /> Reviewed resources</span>
+        </div>
       </div>
       <ResourceFilters categories={categories} search={search} category={category} sort={sort} />
       <div className="my-8">
@@ -35,7 +44,7 @@ export default async function ResourcesPage({
       </div>
       <ResourceGrid resources={list.resources} />
       <div className="my-8">
-        <AdInArticle />
+        <SmartLinkSlot />
       </div>
       <div className="mb-8">
         <AffiliateSlot />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CursorAura } from "@/components/layout/cursor-aura";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { siteConfig } from "@/lib/config";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className="dark" data-scroll-behavior="smooth">
       <body>
+        <CursorAura />
         <a className="skip-link" href="#main-content">Skip to content</a>
         <SiteHeader />
         <main id="main-content" tabIndex={-1}>{children}</main>

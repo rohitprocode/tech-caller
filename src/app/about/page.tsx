@@ -18,9 +18,16 @@ export default function AboutPage() {
         <h1>About Tech Caller.</h1>
         <p>Tech, gaming, and the curiosity to try things out. A YouTube channel by Rohit Rathore.</p>
       </section>
-      <div className="about-banner"><Image src={channel.banner} alt="Tech Caller's YouTube banner featuring Rohit Rathore" width={1138} height={188} sizes="100vw" /></div>
+      <div className="about-brand-panel">
+        <Image src={channel.logo} alt="Tech Caller logo" width={180} height={180} />
+        <div>
+          <p className="eyebrow">TECH CALLER</p>
+          <h2>Watch. Explore. Connect.</h2>
+          <p>The official home for the channel, its downloads, and work enquiries.</p>
+        </div>
+      </div>
       <section className="container-shell about-story">
-        <div className="creator-label"><Image src={channel.avatar} alt="Tech Caller channel avatar" width={72} height={72} /><div><h2>Rohit Rathore</h2><span>Creator behind Tech Caller</span><a className="text-link" href={channel.url} target="_blank" rel="noreferrer">{channel.handle}<ArrowUpRight size={16} aria-hidden /></a></div></div>
+        <div className="creator-label"><Image src={channel.logo} alt="Tech Caller logo" width={72} height={72} /><div><h2>Rohit Rathore</h2><span>Creator behind Tech Caller</span><a className="text-link" href={channel.url} target="_blank" rel="noreferrer">{channel.handle}<ArrowUpRight size={16} aria-hidden /></a></div></div>
         <div className="story-copy">
           <p className="eyebrow">HELLO FROM THE OTHER SIDE OF THE SCREEN</p>
           <h2>A place to figure things out.</h2>

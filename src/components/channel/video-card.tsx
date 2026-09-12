@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight, Play, TrendingUp } from "lucide-react";
 import { channel } from "@/content/channel";
 
 export function VideoCard({ video }: { video: typeof channel.featuredVideos[number] }) {
@@ -11,7 +11,10 @@ export function VideoCard({ video }: { video: typeof channel.featuredVideos[numb
           <span className="video-context">{video.context}</span>
           <span className="video-play" aria-hidden><Play size={18} fill="currentColor" /></span>
         </div>
-        <div className="video-meta"><span>{video.category}</span>{video.date ? <time dateTime={video.date}>{video.dateLabel}</time> : <span>{video.dateLabel}</span>}</div>
+        <div className="video-meta">
+          <span>{video.category}</span>
+          <span className="video-views"><TrendingUp size={13} aria-hidden />{video.viewLabel}</span>
+        </div>
         <h3>{video.title}<ArrowUpRight size={19} aria-hidden /></h3>
         <p>{video.description}</p>
       </a>

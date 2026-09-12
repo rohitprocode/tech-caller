@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, FolderOpen, ListVideo, Play, Youtube } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Download, FolderOpen, ListVideo, Play, Sparkles, Youtube } from "lucide-react";
 import { VideoCard } from "@/components/channel/video-card";
-import { AdInArticle, AffiliateSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
+import { AffiliateSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
 import { channel } from "@/content/channel";
 
 export const metadata: Metadata = {
@@ -16,14 +16,23 @@ export default function HomePage() {
   return (
     <>
       <section className="channel-hero">
-        <Image src={channel.banner} alt="Tech Caller channel artwork featuring Rohit Rathore" fill preload sizes="100vw" className="hero-art" />
         <div className="hero-content container-shell">
-          <div className="hero-byline"><Image src={channel.avatar} alt="" width={38} height={38} /><span>ROHIT RATHORE&apos;S YOUTUBE CHANNEL</span><span className="hero-handle">{channel.handle}</span></div>
-          <h1>Tech Caller<span>.</span></h1>
-          <p>{channel.introduction}</p>
-          <div className="hero-actions">
-            <a className="watch-button" href={channel.url} target="_blank" rel="noreferrer"><Youtube size={20} aria-hidden />Watch on YouTube<ArrowUpRight size={17} aria-hidden /></a>
-            <Link className="hero-secondary" href="/work-with-us">Work With Us<ArrowRight size={17} aria-hidden /></Link>
+          <div className="hero-copy">
+            <div className="hero-byline"><Image src={channel.logo} alt="" width={42} height={42} /><span>OFFICIAL TECH CALLER HUB</span><span className="hero-handle">{channel.handle}</span></div>
+            <h1>Tech resources, gaming files, and creator help.</h1>
+            <p>{channel.introduction}</p>
+            <div className="hero-actions">
+              <Link className="watch-button" href="/resources"><Download size={20} aria-hidden />Explore Resources<ArrowRight size={17} aria-hidden /></Link>
+              <a className="hero-secondary" href={channel.url} target="_blank" rel="noreferrer"><Youtube size={20} aria-hidden />Watch on YouTube<ArrowUpRight size={17} aria-hidden /></a>
+            </div>
+          </div>
+          <div className="hero-visual" aria-hidden>
+            <div className="hero-orbit">
+              <Image src={channel.logo} alt="" width={126} height={126} />
+            </div>
+            <div className="hero-signal hero-signal-one"><Sparkles size={18} />Tech tutorials</div>
+            <div className="hero-signal hero-signal-two"><Download size={18} />Resources</div>
+            <div className="hero-signal hero-signal-three"><Play size={18} />Gaming</div>
           </div>
           <div className="hero-bottom"><p>{channel.topics.map((topic) => <span key={topic}>{topic}</span>)}</p><a href="#videos" className="text-link">Explore the channel<ArrowDown size={17} aria-hidden /></a></div>
         </div>
@@ -33,20 +42,16 @@ export default function HomePage() {
         <NativeBannerSlot />
       </section>
 
-      <section className="container-shell py-6">
-        <NativeBannerSlot containerId="container-4027a7e2fc8db66d5498e7a25a55e338-2" label="Native Banner 2" />
-      </section>
-
       <section id="videos" className="paper-section">
         <div className="container-shell section-pad">
-          <div className="section-heading"><div><p className="eyebrow">A FEW PLACES TO START</p><h2>From the channel.</h2></div><a className="text-link" href={channel.videosUrl} target="_blank" rel="noreferrer">All videos<ArrowUpRight size={17} aria-hidden /></a></div>
+          <div className="section-heading"><div><p className="eyebrow">A FEW PLACES TO START</p><h2>Top viewed videos.</h2></div><a className="text-link" href={channel.videosUrl} target="_blank" rel="noreferrer">All videos<ArrowUpRight size={17} aria-hidden /></a></div>
           <div className="video-grid">{channel.featuredVideos.map((video) => <VideoCard key={video.id} video={video} />)}</div>
-          <p className="archive-note">A recent stream and a few picks from the archive. Older tutorials reflect the apps and devices of their time.</p>
+          <p className="archive-note">Popular archive videos are shown for discovery. Older tutorials and gaming videos may reflect the apps, games, and devices of their time.</p>
         </div>
       </section>
 
       <section className="container-shell py-6">
-        <AdInArticle />
+        <SmartLinkSlot />
       </section>
 
       <section className="container-shell pb-6">

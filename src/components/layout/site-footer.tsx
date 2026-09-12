@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Youtube } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
@@ -7,7 +8,12 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container-shell footer-top">
         <div>
-          <Link href="/" className="brand-lockup"><span className="brand-mark" aria-hidden>tc<span>.</span></span>Tech Caller</Link>
+          <Link href="/" className="brand-lockup">
+            <span className="brand-mark brand-logo" aria-hidden>
+              <Image src="/channel/logo.png" alt="" width={38} height={38} />
+            </span>
+            Tech Caller
+          </Link>
           <p>A home for the channel.<br />A place to start a conversation.</p>
         </div>
         <nav aria-label="Footer" className="footer-nav">

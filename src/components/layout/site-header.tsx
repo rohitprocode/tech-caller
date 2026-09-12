@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X, Youtube } from "lucide-react";
@@ -32,7 +33,9 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container-shell header-inner">
         <Link href="/" className="brand-lockup" onClick={() => setOpen(false)} aria-label="Tech Caller home">
-          <span className="brand-mark" aria-hidden>tc<span>.</span></span>
+          <span className="brand-mark brand-logo" aria-hidden>
+            <Image src="/channel/logo.png" alt="" width={38} height={38} />
+          </span>
           <span>Tech Caller<span className="brand-subtitle">WATCH. EXPLORE. CONNECT.</span></span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary">

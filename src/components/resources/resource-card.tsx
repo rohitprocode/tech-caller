@@ -28,7 +28,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           <span aria-hidden>•</span>
           <span>{resource.file_type.split("/").pop()?.toUpperCase() || "FILE"}</span>
         </div>
-        <h3 className="text-lg font-bold text-foreground">{resource.title}</h3>
+        <h3 className="line-clamp-2 text-lg font-bold leading-6 text-foreground">{resource.title}</h3>
         <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted">{resource.description}</p>
       </Link>
       <div className="mt-auto pt-5">
@@ -43,7 +43,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           </span>
           {resource.youtube_url ? <Youtube aria-label="Has related YouTube video" className="h-4 w-4" /> : null}
         </div>
-        <ButtonLink href={`/api/resources/${resource.slug}/download`} className="w-full">
+        <ButtonLink href={`/api/resources/${resource.slug}/download`} className="download-cta w-full">
           <Download aria-hidden className="h-4 w-4" />
           Download
         </ButtonLink>
