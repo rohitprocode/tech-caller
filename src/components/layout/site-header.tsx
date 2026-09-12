@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X, Youtube } from "lucide-react";
-import { siteConfig } from "@/lib/config";
+import { channel } from "@/content/channel";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -43,7 +43,7 @@ export function SiteHeader() {
             <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>
           ))}
         </nav>
-        <a className="channel-link" href={siteConfig.youtubeChannelUrl} target="_blank" rel="noreferrer">
+        <a className="channel-link" href={channel.url} target="_blank" rel="noreferrer">
           <Youtube size={19} aria-hidden /> YouTube <ArrowUpRight size={15} aria-hidden />
         </a>
         <button id="navigation-toggle" className="menu-toggle" onClick={() => setOpen(!open)}
@@ -58,7 +58,7 @@ export function SiteHeader() {
               {item.label}<ArrowUpRight size={17} aria-hidden />
             </Link>
           ))}
-          <a href={siteConfig.youtubeChannelUrl} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
+          <a href={channel.url} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>
             Watch on YouTube<Youtube size={19} aria-hidden />
           </a>
         </nav>

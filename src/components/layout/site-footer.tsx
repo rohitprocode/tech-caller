@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Youtube } from "lucide-react";
-import { siteConfig } from "@/lib/config";
+import { channel } from "@/content/channel";
 
 export function SiteFooter() {
   return (
@@ -22,7 +22,7 @@ export function SiteFooter() {
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
-        <a className="text-link" href={siteConfig.youtubeChannelUrl} target="_blank" rel="noreferrer">
+        <a className="text-link" href={channel.url} target="_blank" rel="noreferrer">
           <Youtube size={20} aria-hidden /> Find us on YouTube <ArrowUpRight size={17} aria-hidden />
         </a>
       </div>
