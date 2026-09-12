@@ -1,5 +1,10 @@
 import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
+
+const NETWORK_BANNER_SCRIPT =
+  "https://pl31302870.profitableratecpmnetwork.com/4027a7e2fc8db66d5498e7a25a55e338/invoke.js";
+const NETWORK_BANNER_CONTAINER_ID = "container-4027a7e2fc8db66d5498e7a25a55e338";
 
 function AdSlot({ slot, className, label }: { slot?: string; className?: string; label: string }) {
   if (!siteConfig.adsense.client || !slot) {
@@ -76,6 +81,34 @@ export function AffiliateSlot() {
           </a>
         ))}
       </div>
+    </section>
+  );
+}
+
+type NativeBannerSlotProps = {
+  containerId?: string;
+  label?: string;
+  sectionClassName?: string;
+};
+
+export function NativeBannerSlot({
+  containerId = NETWORK_BANNER_CONTAINER_ID,
+  label = "Native Banner",
+  sectionClassName
+}: NativeBannerSlotProps) {
+  return (
+    <section className={cn("rounded-lg border border-border bg-card p-5", sectionClassName)}>
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted">{label}</p>
+      <div className="mt-3 min-h-24">
+        <div id={containerId} />
+      </div>
+      <Script
+        id={`network-native-banner-script-${containerId}`}
+        src={NETWORK_BANNER_SCRIPT}
+        async
+        data-cfasync="false"
+        strategy="afterInteractive"
+      />
     </section>
   );
 }

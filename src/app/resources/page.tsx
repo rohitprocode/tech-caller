@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ResourceFilters } from "@/components/resources/resource-filters";
 import { ResourceGrid } from "@/components/resources/resource-grid";
 import { Pagination } from "@/components/resources/pagination";
-import { AdBanner, AdInArticle, AffiliateSlot } from "@/components/ads/ad-slots";
+import { AdInArticle, AffiliateSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { getCategories, getResourceList } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default async function ResourcesPage({
       </div>
       <ResourceFilters categories={categories} search={search} category={category} sort={sort} />
       <div className="my-8">
-        <AdBanner />
+        <NativeBannerSlot />
       </div>
       <ResourceGrid resources={list.resources} />
       <div className="my-8">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, FolderOpen, ListVideo, Play, Youtube } from "lucide-react";
 import { VideoCard } from "@/components/channel/video-card";
-import { AdBanner, AdInArticle, AffiliateSlot } from "@/components/ads/ad-slots";
+import { AdInArticle, AffiliateSlot, NativeBannerSlot } from "@/components/ads/ad-slots";
 import { channel } from "@/content/channel";
 
 export const metadata: Metadata = {
@@ -30,7 +30,11 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell py-6">
-        <AdBanner />
+        <NativeBannerSlot />
+      </section>
+
+      <section className="container-shell py-6">
+        <NativeBannerSlot containerId="container-4027a7e2fc8db66d5498e7a25a55e338-2" label="Native Banner 2" />
       </section>
 
       <section id="videos" className="paper-section">
