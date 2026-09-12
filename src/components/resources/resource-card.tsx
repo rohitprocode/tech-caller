@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Download, FileArchive, HardDrive, Youtube } from "lucide-react";
 import type { Resource } from "@/types/database";
 import { formatBytes } from "@/lib/utils";
-import { ButtonLink } from "@/components/ui/button";
+import { DownloadButton } from "@/components/resources/download-button";
 
 export function ResourceCard({ resource }: { resource: Resource }) {
   return (
@@ -43,10 +43,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
           </span>
           {resource.youtube_url ? <Youtube aria-label="Has related YouTube video" className="h-4 w-4" /> : null}
         </div>
-        <ButtonLink href={`/api/resources/${resource.slug}/download`} className="download-cta w-full">
-          <Download aria-hidden className="h-4 w-4" />
-          Download
-        </ButtonLink>
+        <DownloadButton href={`/api/resources/${resource.slug}/download`} className="w-full" />
       </div>
     </article>
   );

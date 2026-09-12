@@ -320,6 +320,9 @@ section[id] { scroll-margin-top: 100px; }
 .sponsor-link { min-height: 58px; display: flex; align-items: center; }
 .download-cta { background: linear-gradient(135deg, #ff4b43, #ef3731 52%, #b91f1a) !important; color: #fff !important; box-shadow: 0 12px 28px rgb(239 55 49 / .24); }
 .download-cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.download-action { display: grid; gap: 10px; }
+.download-helper { min-height: 0; max-width: 460px; color: var(--muted); font-size: 12px; line-height: 1.6; opacity: 0; transform: translateY(-3px); transition: opacity .18s ease, transform .18s ease; }
+.download-helper.is-visible { opacity: 1; transform: translateY(0); }
 .resource-card h3 { overflow-wrap: anywhere; }
 
 @media (min-width: 1600px) { .container-shell { width: min(1400px, calc(100% - 120px)); } }

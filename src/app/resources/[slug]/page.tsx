@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Download, ExternalLink, FileArchive, HardDrive, Youtube } from "lucide-react";
 import { AdInArticle, AdSidebar } from "@/components/ads/ad-slots";
+import { DownloadButton } from "@/components/resources/download-button";
 import { ButtonLink } from "@/components/ui/button";
 import { getResourceBySlug } from "@/lib/data";
 import { formatBytes, formatDate, getYouTubeId, publicUrl } from "@/lib/utils";
@@ -91,10 +92,11 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
           </div>
 
           <div className="mt-8">
-            <ButtonLink href={`/api/resources/${resource.slug}/download`} className="h-12 px-6 text-base">
-              <Download aria-hidden className="h-5 w-5" />
-              Download Resource
-            </ButtonLink>
+            <DownloadButton
+              href={`/api/resources/${resource.slug}/download`}
+              label="Download Resource"
+              className="h-12 px-6 text-base"
+            />
           </div>
 
           <AdInArticle />
