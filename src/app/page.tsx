@@ -19,7 +19,7 @@ export default function HomePage() {
         <div className="hero-content container-shell">
           <div className="hero-copy">
             <div className="hero-byline"><Image src={channel.logo} alt="" width={42} height={42} /><span>OFFICIAL TECH CALLER HUB</span><span className="hero-handle">{channel.handle}</span></div>
-            <h1>Tech resources, gaming files, and creator help.</h1>
+            <h1>Never missed a call from Tech Caller.</h1>
             <p>{channel.introduction}</p>
             <div className="hero-actions">
               <Link className="watch-button" href="/resources"><Download size={20} aria-hidden />Explore Resources<ArrowRight size={17} aria-hidden /></Link>

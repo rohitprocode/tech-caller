@@ -3,7 +3,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "reac
 import { cn } from "@/lib/utils";
 
 const variants = {
-  primary: "bg-accent text-slate-950 hover:bg-accent-strong",
+  primary: "app-button-primary",
   secondary: "border border-border bg-card text-foreground hover:bg-surface",
   ghost: "text-muted hover:bg-surface hover:text-foreground",
   danger: "border border-red-400/40 bg-red-500/10 text-red-200 hover:bg-red-500/20"

@@ -10,7 +10,7 @@ export const channel = {
   playlistsUrl: "https://www.youtube.com/@tech-caller/playlists",
   logo: "/channel/logo.png",
   banner: "/channel/banner.jpg",
-  introduction: "Practical tech tutorials, useful downloads, gaming resources, and website work by Rohit Rathore.",
+  introduction: "Tech Caller brings practical tech tutorials, gaming resources, useful downloads, and website services together in one trusted place.",
   topics: ["Tech resources", "Gaming downloads", "Website services"],
   featuredVideos: [
     {

@@ -14,7 +14,7 @@ export function SiteFooter() {
             </span>
             Tech Caller
           </Link>
-          <p>A home for the channel.<br />A place to start a conversation.</p>
+          <p>Never missed a call from Tech Caller.</p>
         </div>
         <nav aria-label="Footer" className="footer-nav">
           <Link href="/resources">Resources</Link>
