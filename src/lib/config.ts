@@ -26,7 +26,7 @@ export const siteConfig = {
   ],
   allowedExtensions: ["zip", "pdf", "png", "jpg", "jpeg", "svg", "txt", "json", "xml", "apk", "exe"],
   adsense: {
-    client: process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "",
+    client: process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-6531600660121964",
     homeSlot: process.env.NEXT_PUBLIC_ADSENSE_HOME_SLOT || "",
     resourceSlot: process.env.NEXT_PUBLIC_ADSENSE_RESOURCE_SLOT || "",
     sidebarSlot: process.env.NEXT_PUBLIC_ADSENSE_SIDEBAR_SLOT || ""
