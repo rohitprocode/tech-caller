@@ -3,7 +3,7 @@ const mb = 1024 * 1024;
 export const siteConfig = {
   name: "Tech Caller",
   description: "The home of Tech Caller on YouTube. Explore the channel, find video resources, and get in touch about ideas and collaborations.",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://tech-caller.vercel.app",
   youtubeChannelUrl: process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_URL || "https://www.youtube.com/@tech-caller",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "rohit990797@gmail.com",
   paginationSize: 12,

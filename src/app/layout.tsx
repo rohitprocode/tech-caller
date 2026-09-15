@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { CursorAura } from "@/components/layout/cursor-aura";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -33,14 +32,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark" data-scroll-behavior="smooth">
-      <body>
-        <Script
-          id="google-adsense"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
+      <head>
+        <script
           async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
+          crossOrigin="anonymous"
         />
+      </head>
+      <body>
         <CursorAura />
         <a className="skip-link" href="#main-content">Skip to content</a>
         <SiteHeader />
