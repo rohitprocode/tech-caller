@@ -1,24 +1,41 @@
 import Link from "next/link";
-import { ArrowRight, Gift, HeartHandshake, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 type SupportSectionProps = {
   compact?: boolean;
 };
+
+const supportGoal = 10000;
+const supportRaised = 1640;
+const supporterCount = 12;
+const supportProgress = Math.min(Math.round((supportRaised / supportGoal) * 100), 100);
+
+const currency = new Intl.NumberFormat("en-IN", {
+  style: "currency",
+  currency: "INR",
+  maximumFractionDigits: 0
+});
 
 export function SupportSection({ compact = false }: SupportSectionProps) {
   return (
     <section className={compact ? "support-section support-section-compact" : "support-section"} id="support">
       <div className="support-copy">
         <p className="eyebrow">SUPPORT TECH CALLER</p>
-        <h2>A small gift can keep the work moving.</h2>
-        <p>
-          Every resource, tutorial, upload, fix, and website improvement takes time, testing, and consistency. If Tech
-          Caller has helped you even once, your voluntary support is a quiet way to say, “keep going.”
-        </p>
-        <p>
-          Downloads and resources will stay free. Support is never required, but every contribution adds motivation to
-          create better videos, cleaner resources, and more useful tools for everyone.
-        </p>
+        <h2>Fuel the next helpful resource ❤️</h2>
+        <p>Resources stay free. If Tech Caller helped you, you can send a small gift as motivation for the next video, tool, or download.</p>
+        <div className="support-progress-card" aria-label={`Support progress ${supportProgress}%`}>
+          <div className="support-progress-top">
+            <span>Milestone: {currency.format(supportGoal)}</span>
+            <strong>{supportProgress}%</strong>
+          </div>
+          <div className="support-progress-bar">
+            <span style={{ width: `${supportProgress}%` }} />
+          </div>
+          <p>
+            {currency.format(supportRaised)} gifted by {supporterCount} supporters. Waiting to complete the milestone
+            with the Tech Caller family. 🙏
+          </p>
+        </div>
         {!compact ? (
           <Link href="/support" className="text-link">
             Open support page
@@ -27,16 +44,12 @@ export function SupportSection({ compact = false }: SupportSectionProps) {
         ) : null}
       </div>
       <div className="support-card" aria-label="Voluntary support QR code area">
-        <div className="support-icon-row">
-          <HeartHandshake size={24} aria-hidden />
-          <Gift size={24} aria-hidden />
-          <Sparkles size={24} aria-hidden />
-        </div>
+        <div className="support-icon-row" aria-hidden>🎁 ❤️ ✨</div>
         <div className="support-qr-placeholder">
           <span>QR</span>
         </div>
-        <h3>Voluntary Support</h3>
-        <p>Scan the payment QR here once it is added. Any amount is appreciated, and the resource remains free.</p>
+        <h3>Gift any amount</h3>
+        <p>Scan the QR once it is added. Support is optional, and downloads will remain free.</p>
       </div>
     </section>
   );

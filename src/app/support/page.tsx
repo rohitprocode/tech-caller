@@ -11,12 +11,9 @@ export default function SupportPage() {
   return (
     <>
       <section className="page-intro container-shell">
-        <p className="eyebrow">A NOTE FROM TECH CALLER</p>
-        <h1>Support the work behind the resources.</h1>
-        <p>
-          Your support is optional, but it helps keep the effort alive: better videos, better files, and more useful
-          resources for upcoming Tech Caller content.
-        </p>
+        <p className="eyebrow">SUPPORT</p>
+        <h1>Keep Tech Caller creating. ❤️</h1>
+        <p>Free resources, videos, and useful files take time. Your gift is optional, but it gives real motivation.</p>
       </section>
       <div className="container-shell pb-16">
         <SupportSection compact />
