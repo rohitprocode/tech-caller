@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { CopyUpiButton } from "@/components/support/copy-upi-button";
 
 type SupportSectionProps = {
   compact?: boolean;
@@ -51,7 +52,7 @@ export function SupportSection({ compact = false }: SupportSectionProps) {
         </div>
         <h3>Gift any amount</h3>
         <p>Scan with any UPI app.</p>
-        <p className="support-upi-id">UPI ID: rohit990797@oksbi</p>
+        <CopyUpiButton upiId="rohit990797@oksbi" />
       </div>
     </section>
   );
