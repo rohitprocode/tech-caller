@@ -59,10 +59,6 @@ export default function HomePage() {
         <AdsterraLinkSlot />
       </section>
 
-      <div className="container-shell">
-        <SupportSection />
-      </div>
-
       <section className="container-shell collection-section" aria-labelledby="collection-heading">
         <div className="collection-intro"><p className="eyebrow">KEEP EXPLORING</p><h2 id="collection-heading">Pick your next watch.</h2></div>
         <a className="collection-item" href={channel.playlist.url} target="_blank" rel="noreferrer">
@@ -79,6 +75,10 @@ export default function HomePage() {
           <div className="resource-invitation"><FolderOpen size={30} aria-hidden /><h3>Looking for a resource?</h3><p>Files and downloads from the videos, in their own place.</p><Link href="/resources" className="text-link">Explore Resources<ArrowRight size={18} aria-hidden /></Link></div>
         </div>
       </section>
+
+      <div className="container-shell">
+        <SupportSection />
+      </div>
 
       <section className="container-shell home-about">
         <div><p className="eyebrow">THE PERSON BEHIND THE CHANNEL</p><h2>Hi, I&apos;m Rohit.</h2></div>
