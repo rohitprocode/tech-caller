@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Download, FolderOpen, ListVideo, Play, Sparkles, Youtube } from "lucide-react";
 import { VideoCard } from "@/components/channel/video-card";
 import { AdsterraLinkSlot, NativeBannerSlot, SmartLinkSlot } from "@/components/ads/ad-slots";
+import { SupportSection } from "@/components/support/support-section";
 import { channel } from "@/content/channel";
 
 export const metadata: Metadata = {
@@ -57,6 +58,10 @@ export default function HomePage() {
       <section className="container-shell pb-6">
         <AdsterraLinkSlot />
       </section>
+
+      <div className="container-shell">
+        <SupportSection />
+      </div>
 
       <section className="container-shell collection-section" aria-labelledby="collection-heading">
         <div className="collection-intro"><p className="eyebrow">KEEP EXPLORING</p><h2 id="collection-heading">Pick your next watch.</h2></div>

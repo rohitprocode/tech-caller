@@ -10,6 +10,7 @@ import { channel } from "@/content/channel";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/resources", label: "Resources" },
+  { href: "/support", label: "Support" },
   { href: "/work-with-us", label: "Work With Us" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
