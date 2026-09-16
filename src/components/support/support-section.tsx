@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 type SupportSectionProps = {
@@ -45,11 +46,11 @@ export function SupportSection({ compact = false }: SupportSectionProps) {
       </div>
       <div className="support-card" aria-label="Voluntary support QR code area">
         <div className="support-icon-row" aria-hidden>🎁 ❤️ ✨</div>
-        <div className="support-qr-placeholder">
-          <span>QR</span>
+        <div className="support-qr-frame">
+          <Image src="/support/payment-qr.jpg" alt="Tech Caller voluntary support payment QR" width={240} height={240} />
         </div>
         <h3>Gift any amount</h3>
-        <p>Scan the QR once it is added. Support is optional, and downloads will remain free.</p>
+        <p>Scan with any UPI app.</p>
       </div>
     </section>
   );
