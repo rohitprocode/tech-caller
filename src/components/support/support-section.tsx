@@ -51,6 +51,7 @@ export function SupportSection({ compact = false }: SupportSectionProps) {
         </div>
         <h3>Gift any amount</h3>
         <p>Scan with any UPI app.</p>
+        <p className="support-upi-id">UPI ID: rohit990797@oksbi</p>
       </div>
     </section>
   );

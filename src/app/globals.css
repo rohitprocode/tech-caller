@@ -354,6 +354,7 @@ section[id] { scroll-margin-top: 100px; }
 .support-qr-frame img { display: block; width: 100%; height: auto; }
 .support-card h3 { font-size: 20px; font-weight: 780; }
 .support-card p { max-width: 280px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.support-upi-id { border: 1px solid rgb(243 246 0 / .26); border-radius: 999px; background: rgb(243 246 0 / .08); color: #f3f600 !important; padding: 7px 11px; font-weight: 750; overflow-wrap: anywhere; }
 .about-brand-panel { width: min(1240px, calc(100% - 64px)); margin-inline: auto; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 34px; align-items: center; border: 1px solid rgb(255 255 255 / .09); border-radius: 18px; background: linear-gradient(135deg, rgb(243 246 0 / .18), rgb(116 247 211 / .08) 48%, rgb(110 168 255 / .12)), linear-gradient(135deg, #151917, #0d0f0f); padding: 34px; box-shadow: 0 24px 80px rgb(0 0 0 / .26); }
 .about-brand-panel img { border-radius: 50%; box-shadow: 0 0 0 1px rgb(255 255 255 / .18), 0 18px 60px rgb(243 246 0 / .16); }
 .about-brand-panel h2 { margin-top: 10px; font-size: 38px; line-height: 1.15; font-weight: 800; }
