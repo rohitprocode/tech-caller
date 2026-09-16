@@ -32,13 +32,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark" data-scroll-behavior="smooth">
-      <head>
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
-          crossOrigin="anonymous"
-        />
-      </head>
+      {siteConfig.adsense.enabled ? (
+        <head>
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
+            crossOrigin="anonymous"
+          />
+        </head>
+      ) : null}
       <body>
         <CursorAura />
         <a className="skip-link" href="#main-content">Skip to content</a>

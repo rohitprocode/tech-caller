@@ -78,6 +78,10 @@ export function AdSenseSpace({
   format = "auto",
   className
 }: AdSenseSpaceProps) {
+  if (!siteConfig.adsense.enabled) {
+    return null;
+  }
+
   const hasSlot = Boolean(slot);
 
   return (

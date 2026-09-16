@@ -26,6 +26,8 @@ export const siteConfig = {
   ],
   allowedExtensions: ["zip", "pdf", "png", "jpg", "jpeg", "svg", "txt", "json", "xml", "apk", "exe"],
   adsense: {
+    // Keep AdSense disabled until the site is approved. Change this to true after approval.
+    enabled: false,
     client: process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-6531600660121964",
     homeSlot: process.env.NEXT_PUBLIC_ADSENSE_HOME_SLOT || "1091644790",
     resourceSlot: process.env.NEXT_PUBLIC_ADSENSE_RESOURCE_SLOT || "4300262064",
