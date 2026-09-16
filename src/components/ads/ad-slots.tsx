@@ -68,13 +68,20 @@ type NativeBannerSlotProps = {
 type AdSenseSpaceProps = {
   label?: string;
   slot?: string;
+  format?: "auto" | "autorelaxed";
+  className?: string;
 };
 
-export function AdSenseSpace({ label = "Google AdSense", slot = siteConfig.adsense.homeSlot }: AdSenseSpaceProps) {
+export function AdSenseSpace({
+  label = "Google AdSense",
+  slot = siteConfig.adsense.homeSlot,
+  format = "auto",
+  className
+}: AdSenseSpaceProps) {
   const hasSlot = Boolean(slot);
 
   return (
-    <section className="adsense-shell" aria-label={label}>
+    <section className={cn("adsense-shell", className)} aria-label={label}>
       <p className="ad-label">{label}</p>
       {hasSlot ? (
         <>
@@ -83,8 +90,8 @@ export function AdSenseSpace({ label = "Google AdSense", slot = siteConfig.adsen
             style={{ display: "block" }}
             data-ad-client={siteConfig.adsense.client}
             data-ad-slot={slot}
-            data-ad-format="auto"
-            data-full-width-responsive="true"
+            data-ad-format={format}
+            data-full-width-responsive={format === "auto" ? "true" : undefined}
           />
           <Script
             id={`adsense-push-${slot}`}
@@ -99,6 +106,17 @@ export function AdSenseSpace({ label = "Google AdSense", slot = siteConfig.adsen
         </div>
       )}
     </section>
+  );
+}
+
+export function AdSenseMultiplexSpace() {
+  return (
+    <AdSenseSpace
+      label="Google AdSense Multiplex"
+      slot={siteConfig.adsense.resourceSlot}
+      format="autorelaxed"
+      className="adsense-multiplex-shell"
+    />
   );
 }
 
@@ -150,16 +168,19 @@ export function AdsterraLinkSlot({
   compact = false
 }: AdsterraLinkSlotProps) {
   return (
-    <section className={cn("adsterra-link-slot", compact && "adsterra-link-slot-compact", className)} aria-label={label}>
-      <div>
-        <p className="ad-label">{label}</p>
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
-      <a href={SMART_LINK} target="_blank" rel="noreferrer">
-        Open sponsored offer
-        <ArrowUpRight size={16} aria-hidden />
-      </a>
-    </section>
+    <div className={cn("ad-stack", className)}>
+      <AdSenseMultiplexSpace />
+      <section className={cn("adsterra-link-slot", compact && "adsterra-link-slot-compact")} aria-label={label}>
+        <div>
+          <p className="ad-label">{label}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+        <a href={SMART_LINK} target="_blank" rel="noreferrer">
+          Open sponsored offer
+          <ArrowUpRight size={16} aria-hidden />
+        </a>
+      </section>
+    </div>
   );
 }
