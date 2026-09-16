@@ -21,7 +21,7 @@ export function SupportSection({ compact = false }: SupportSectionProps) {
     <section className={compact ? "support-section support-section-compact" : "support-section"} id="support">
       <div className="support-copy">
         <p className="eyebrow">SUPPORT TECH CALLER</p>
-        <h2>Fuel the next helpful resource ❤️</h2>
+        <h2>Support us ❤️</h2>
         <p>Resources stay free. If Tech Caller helped you, you can send a small gift as motivation for the next video, tool, or download.</p>
         <div className="support-progress-card" aria-label={`Support progress ${supportProgress}%`}>
           <div className="support-progress-top">
