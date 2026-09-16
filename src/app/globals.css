@@ -359,8 +359,13 @@ section[id] { scroll-margin-top: 100px; }
 .resource-library-points { display: grid; gap: 10px; }
 .resource-library-points span { display: flex; align-items: center; gap: 10px; border: 1px solid rgb(255 255 255 / .08); border-radius: 8px; background: rgb(255 255 255 / .04); padding: 12px; color: #eef4ef; font-size: 13px; font-weight: 700; }
 .resource-library-points svg { color: #f3f600; flex-shrink: 0; }
+.ad-stack { display: grid; gap: 14px; }
 .ad-shell { border: 1px solid rgb(255 255 255 / .1); border-radius: 10px; background: linear-gradient(135deg, rgb(243 246 0 / .08), rgb(116 247 211 / .045) 50%, rgb(110 168 255 / .08)), linear-gradient(135deg, #161a17, #101312); padding: 16px; box-shadow: inset 0 1px 0 rgb(255 255 255 / .04); }
 .ad-label { color: #7f8982; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.adsense-shell { border: 1px solid rgb(66 133 244 / .34); border-radius: 10px; background: linear-gradient(135deg, rgb(66 133 244 / .1), rgb(52 168 83 / .07) 48%, rgb(251 188 5 / .08)), linear-gradient(135deg, #111923, #0d1117); padding: 16px; box-shadow: inset 0 1px 0 rgb(255 255 255 / .04); }
+.adsense-empty { display: grid; min-height: 96px; place-items: center; align-content: center; gap: 5px; border: 1px dashed rgb(255 255 255 / .1); border-radius: 8px; background: rgb(255 255 255 / .025); padding: 16px; text-align: center; }
+.adsense-empty p { color: var(--foreground); font-size: 13px; font-weight: 750; }
+.adsense-empty span { max-width: 560px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .smartlink-strip { display: flex; align-items: center; justify-content: space-between; gap: 28px; border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--border)); border-radius: 10px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, var(--card)), var(--card)); padding: 24px; }
 .smartlink-strip h2 { margin-top: 6px; font-size: 22px; font-weight: 750; line-height: 1.25; }
 .smartlink-strip p:not(.eyebrow) { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.7; }

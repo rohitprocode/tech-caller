@@ -65,25 +65,65 @@ type NativeBannerSlotProps = {
   sectionClassName?: string;
 };
 
+type AdSenseSpaceProps = {
+  label?: string;
+  slot?: string;
+};
+
+export function AdSenseSpace({ label = "Google AdSense", slot = siteConfig.adsense.homeSlot }: AdSenseSpaceProps) {
+  const hasSlot = Boolean(slot);
+
+  return (
+    <section className="adsense-shell" aria-label={label}>
+      <p className="ad-label">{label}</p>
+      {hasSlot ? (
+        <>
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client={siteConfig.adsense.client}
+            data-ad-slot={slot}
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+          <Script
+            id={`adsense-push-${slot}`}
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{ __html: "(adsbygoogle = window.adsbygoogle || []).push({});" }}
+          />
+        </>
+      ) : (
+        <div className="adsense-empty">
+          <p>Google AdSense space</p>
+          <span>Auto Ads can use this page after approval. Send ad unit slot IDs later for fixed ads here.</span>
+        </div>
+      )}
+    </section>
+  );
+}
+
 export function NativeBannerSlot({
   containerId = NETWORK_BANNER_CONTAINER_ID,
   label = "Advertisement",
   sectionClassName
 }: NativeBannerSlotProps) {
   return (
-    <section className={cn("ad-shell", sectionClassName)} aria-label={label}>
-      <p className="ad-label">{label}</p>
-      <div className="mt-3 min-h-24">
-        <div id={containerId} />
-      </div>
-      <Script
-        id={`network-native-banner-script-${containerId}`}
-        src={NETWORK_BANNER_SCRIPT}
-        async
-        data-cfasync="false"
-        strategy="afterInteractive"
-      />
-    </section>
+    <div className={cn("ad-stack", sectionClassName)}>
+      <AdSenseSpace />
+      <section className="ad-shell" aria-label={label}>
+        <p className="ad-label">{label}</p>
+        <div className="mt-3 min-h-24">
+          <div id={containerId} />
+        </div>
+        <Script
+          id={`network-native-banner-script-${containerId}`}
+          src={NETWORK_BANNER_SCRIPT}
+          async
+          data-cfasync="false"
+          strategy="afterInteractive"
+        />
+      </section>
+    </div>
   );
 }
 
