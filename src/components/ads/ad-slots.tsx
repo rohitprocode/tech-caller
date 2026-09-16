@@ -134,8 +134,12 @@ export function NativeBannerSlot({
       <AdSenseSpace />
       <section className="ad-shell" aria-label={label}>
         <p className="ad-label">{label}</p>
-        <div className="mt-3 min-h-24">
+        <div className="adsterra-native-frame">
           <div id={containerId} />
+          <div className="adsterra-loading-note">
+            <p>Sponsored space</p>
+            <span>Adsterra may take a moment to load or may not fill on every visit.</span>
+          </div>
         </div>
         <Script
           id={`network-native-banner-script-${containerId}`}
