@@ -18,7 +18,17 @@ const currency = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0
 });
 
+const sampleMessages = [
+  { name: "Aman", city: "Indore", message: "Resources simple aur useful hain. Keep creating, Tech Caller." },
+  { name: "Priya", city: "Bhopal", message: "Aapke tutorials se problem solve hui. Small support from my side." },
+  { name: "Rahul", city: "Jaipur", message: "Free resources ke liye thanks. Consistency banaye rakho." },
+  { name: "Neha", city: "Pune", message: "Clear explanation and helpful files. All the best for the milestone." },
+  { name: "Vikas", city: "Delhi", message: "Tech Caller ka work genuine lagta hai. Keep going." }
+];
+
 export function SupportSection({ compact = false }: SupportSectionProps) {
+  const scrollingMessages = [...sampleMessages, ...sampleMessages];
+
   return (
     <section className={compact ? "support-section support-section-compact" : "support-section"} id="support">
       <div className="support-copy">
@@ -37,6 +47,19 @@ export function SupportSection({ compact = false }: SupportSectionProps) {
             {currency.format(supportRaised)} gifted by {supporterCount} supporters. Waiting to complete the milestone
             with the Tech Caller family. 🙏
           </p>
+        </div>
+        <div className="support-messages" aria-label="Sample support messages">
+          <div className="support-message-track">
+            {scrollingMessages.map((item, index) => (
+              <article className="support-message" key={`${item.name}-${item.city}-${index}`}>
+                <div className="support-avatar" aria-hidden>{item.name.charAt(0)}</div>
+                <div>
+                  <strong>{item.name} • {item.city}</strong>
+                  <p>{item.message}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
         {!compact ? (
           <Link href="/support" className="text-link">
